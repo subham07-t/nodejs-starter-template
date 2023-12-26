@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx validate-branch-name
+#  Enabled it when start for a project
+# npx validate-branch-name
+
 npx lint-staged
