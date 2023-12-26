@@ -1,0 +1,19 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:node/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "block-scoped-var": "error",
+    "comma-style": ["warn", "last"],
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-unexpected-multiline": "warn"
+  },
+  "plugins": ["prettier"]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "nodejs-starter-template",
+  "version": "1.0.0",
+  "description": "nodejs-starter-template",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "prod": "node scripts/prod.local.js",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "npm run clean:unix || npm run clean:windows",
+    "clean:unix": "rm -r logs",
+    "clean:windows": "rmdir /s /q logs",
+    "commit": "git-cz",
+    "prepare": "husky install",
+    "prettify": "prettier --write --ignore-unknown",
+    "lint": "eslint --ext .js . --color"
+  },
+  "validate-branch-name": {
+    "pattern": "^(develop|(feat|fix|hotfix)/[a-zA-Z0-9](?!.*--)[a-zA-Z0-9-]{0,}[a-zA-Z0-9])$",
+    "errorMsg": "Please follow standard branch name, rename branch using: git branch -m <oldname> <newname>"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "npm run prettify"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/cz-commitlint": "^18.4.3",
+    "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "chalk": "^5.3.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "express-winston": "^4.2.0",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

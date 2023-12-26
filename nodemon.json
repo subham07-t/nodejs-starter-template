@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "scripts","src"
+  ],
+  "ext": ".js",
+  "exec": "npm run lint && node scripts/dev.local.js"
+}
