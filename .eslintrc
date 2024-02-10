@@ -14,8 +14,16 @@
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
     "no-unexpected-multiline": "warn",
-    "no-var":"error",
+    "no-var": "error",
     "no-console": "warn"
   },
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "overrides": [
+    {
+      "files": ["src/server.js"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
 }
